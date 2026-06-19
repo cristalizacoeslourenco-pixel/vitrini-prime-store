@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --color-graphite: #111111;
+  --color-ice: #f8f7f3;
+  --color-champagne: #c8a96a;
+  --color-petrol: #0f3d3e;
+  --color-light-gray: #e7e3da;
+  --color-text-gray: #4b4b4b;
+
+  --background: var(--color-ice);
+  --foreground: var(--color-graphite);
+}
+
+@theme inline {
+  --color-graphite: var(--color-graphite);
+  --color-ice: var(--color-ice);
+  --color-champagne: var(--color-champagne);
+  --color-petrol: var(--color-petrol);
+  --color-light-gray: var(--color-light-gray);
+  --color-text-gray: var(--color-text-gray);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: "Iowan Old Style", "Palatino Linotype", "URW Palladio L",
+    P052, ui-serif, Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--color-champagne);
+  color: var(--color-graphite);
+}
+
+a {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}

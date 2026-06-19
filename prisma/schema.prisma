@@ -1,0 +1,127 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Department {
+  id          String     @id @default(cuid())
+  name        String
+  slug        String     @unique
+  description String
+  image       String?
+  categories  Category[]
+  products    Product[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Category {
+  id           String     @id @default(cuid())
+  name         String
+  slug         String     @unique
+  description  String
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id])
+  products     Product[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Supplier {
+  id              String    @id @default(cuid())
+  name            String
+  website         String
+  country         String
+  averageShipDays Int
+  rating          Float?
+  notes           String?
+  riskLevel       String    @default("MEDIUM")
+  products        Product[]
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Product {
+  id                String      @id @default(cuid())
+  name              String
+  slug              String      @unique
+  shortDescription  String
+  description       String
+  specifications     String
+  priceCents        Int
+  compareAtCents    Int?
+  supplierCostCents Int
+  marginCents       Int
+  sku               String      @unique
+  image             String?
+  gallery           String      @default("[]")
+  status            String      @default("ACTIVE")
+  badge             String?
+  stockStatus       String      @default("DROPSHIPPING")
+  estimatedShipDays Int
+  departmentId      String
+  categoryId        String
+  supplierId        String
+  department        Department  @relation(fields: [departmentId], references: [id])
+  category          Category    @relation(fields: [categoryId], references: [id])
+  supplier          Supplier    @relation(fields: [supplierId], references: [id])
+  orderItems        OrderItem[]
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  phone     String?
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id             String          @id @default(cuid())
+  orderNumber    String          @unique
+  customerId     String
+  customer       Customer        @relation(fields: [customerId], references: [id])
+  status         String          @default("PENDING")
+  paymentStatus  String          @default("SIMULATED")
+  paymentMethod  String?
+  subtotalCents  Int
+  shippingCents  Int             @default(0)
+  totalCents     Int
+  trackingCode     String?
+  supplierNotes    String?
+  shippingAddress  String?
+  items          OrderItem[]
+  trackingEvents TrackingEvent[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model OrderItem {
+  id                   String  @id @default(cuid())
+  orderId              String
+  productId            String
+  quantity             Int
+  unitPriceCents       Int
+  totalCents           Int
+  supplierCostCents    Int
+  estimatedProfitCents Int
+  order                Order   @relation(fields: [orderId], references: [id])
+  product              Product @relation(fields: [productId], references: [id])
+}
+
+model TrackingEvent {
+  id          String   @id @default(cuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id])
+  status      String
+  description String
+  createdAt   DateTime @default(now())
+}
