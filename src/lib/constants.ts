@@ -1,9 +1,9 @@
 export const STORE = {
   name: "Vitrini Prime",
   slogan:
-    "Sua vitrine premium de tecnologia, música, casa e beleza profissional.",
+    "Beleza, casa, fitness, pets, tech e moda — tudo em um só lugar.",
   description:
-    "Produtos selecionados de tecnologia, música, casa e beleza profissional em uma experiência de compra moderna, simples e confiável.",
+    "Produtos em alta no Brasil com preços competitivos e entrega para todo o país. Experiência de compra moderna, simples e confiável.",
   whatsapp:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ??
     "PREENCHER_MANUALMENTE_NA_PLATAFORMA_OFICIAL",

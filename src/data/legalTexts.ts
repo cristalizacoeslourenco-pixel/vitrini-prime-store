@@ -140,7 +140,7 @@ export const termsOfUse = {
     {
       heading: "2. Sobre a loja",
       content:
-        "A Vitrini Prime é uma loja virtual que comercializa produtos de tecnologia, música, casa e beleza profissional. Operamos no modelo dropshipping, revendendo produtos de fornecedores parceiros selecionados.",
+        "A Vitrini Prime é uma loja virtual que comercializa produtos de beleza, skincare, casa, organização, fitness, saúde, pet shop, tech, gadgets e moda. Operamos no modelo dropshipping, revendendo produtos de fornecedores parceiros selecionados.",
     },
     {
       heading: "3. Cadastro e responsabilidade",

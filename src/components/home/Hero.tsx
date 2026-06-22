@@ -10,8 +10,7 @@ export function Hero() {
             Vitrini Prime
           </span>
           <h1 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            Sua vitrine premium de tecnologia, música, casa e beleza
-            profissional.
+            Beleza, casa, fitness, pets, tech e moda — tudo em um só lugar.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ice/75 sm:text-lg">
             Produtos selecionados, preços competitivos e experiência de compra
