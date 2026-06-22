@@ -5,8 +5,26 @@ import { STORE } from "@/lib/constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${STORE.name} | ${STORE.slogan}`,
+  title: {
+    default: `${STORE.name} — ${STORE.slogan}`,
+    template: `%s | ${STORE.name}`,
+  },
   description: STORE.description,
+  keywords: [
+    "loja online", "dropshipping", "skincare", "beleza", "fitness", "pet shop",
+    "gadgets", "moda", "organização", "casa", "compra online brasil",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: STORE.name,
+    title: `${STORE.name} — ${STORE.slogan}`,
+    description: STORE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

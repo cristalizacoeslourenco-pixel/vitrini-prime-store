@@ -32,12 +32,12 @@ const values = [
 ];
 
 const departments = [
-  { name: "Informática e Tecnologia", emoji: "💻" },
-  { name: "Música e Instrumentos", emoji: "🎸" },
-  { name: "Casa e Utilidades", emoji: "🏠" },
-  { name: "Barbearia", emoji: "💈" },
-  { name: "Manicure", emoji: "💅" },
-  { name: "Salão Feminino", emoji: "💇" },
+  { name: "Beleza & Skincare", emoji: "✨" },
+  { name: "Casa & Organização", emoji: "🏠" },
+  { name: "Fitness & Saúde", emoji: "💪" },
+  { name: "Pet Shop", emoji: "🐾" },
+  { name: "Tech & Gadgets", emoji: "📱" },
+  { name: "Moda & Acessórios", emoji: "👜" },
 ];
 
 export default function SobrePage() {
@@ -50,9 +50,9 @@ export default function SobrePage() {
           <span className="text-champagne">Vitrini Prime</span>
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-text-gray max-w-2xl mx-auto">
-          Somos uma loja boutique que reúne produtos selecionados de tecnologia,
-          música, casa e beleza profissional em uma vitrine única — com a
-          conveniência do e-commerce e o cuidado de uma loja de bairro.
+          Somos uma loja online com curadoria de produtos em alta no Brasil —
+          beleza, casa, fitness, pets, tech e moda — com preços competitivos
+          e entrega para todo o país.
         </p>
       </div>
 
@@ -62,9 +62,8 @@ export default function SobrePage() {
           Nossa missão
         </h2>
         <p className="text-ice/80 leading-relaxed text-lg">
-          &ldquo;Tornar acessível o que há de melhor em cada categoria —
-          tecnologia, som, lar e beleza — com honestidade, agilidade e o
-          toque{" "}
+          &ldquo;Entregar o melhor de cada categoria — beleza, casa, fitness,
+          pets, tech e moda — com honestidade, preços justos e o toque{" "}
           <span className="text-champagne font-medium">prime</span> que você
           merece.&rdquo;
         </p>
