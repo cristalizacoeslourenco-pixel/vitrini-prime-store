@@ -31,10 +31,9 @@ type Address = {
 type PaymentMethod = "PIX" | "CREDIT_CARD" | "BOLETO" | "SIMULATED";
 
 const PAYMENT_OPTIONS: { value: PaymentMethod; label: string; hint: string }[] = [
-  { value: "PIX", label: "Pix", hint: "Aprovação imediata (simulado)" },
-  { value: "CREDIT_CARD", label: "Cartão de crédito", hint: "Até 12x (simulado)" },
-  { value: "BOLETO", label: "Boleto bancário", hint: "Vence em 3 dias úteis (simulado)" },
-  { value: "SIMULATED", label: "Pagamento de teste", hint: "Apenas para validação da loja" },
+  { value: "PIX", label: "Pix", hint: "Pagamento instantâneo — você receberá o QR Code após confirmar" },
+  { value: "CREDIT_CARD", label: "Cartão de crédito", hint: "Em breve disponível" },
+  { value: "BOLETO", label: "Boleto bancário", hint: "Em breve disponível" },
 ];
 
 const SHIPPING_TABLE: Record<string, number> = {
@@ -68,7 +67,7 @@ export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
   const [cepLoading, setCepLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("SIMULATED");
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("PIX");
 
   const [personal, setPersonal] = useState<PersonalData>({
     name: "", email: "", phone: "", notes: "",
@@ -437,7 +436,7 @@ export default function CheckoutPage() {
             </div>
             <div className="flex items-center gap-1.5 text-xs text-text-gray/60">
               <ShieldCheck size={14} className="text-petrol shrink-0" />
-              Compra simulada — dados fictícios
+              Pagamento 100% seguro via Pix
             </div>
           </div>
         </div>

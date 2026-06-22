@@ -5,10 +5,13 @@ export const STORE = {
   description:
     "Produtos em alta no Brasil com preços competitivos e entrega para todo o país. Experiência de compra moderna, simples e confiável.",
   whatsapp:
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ??
-    "PREENCHER_MANUALMENTE_NA_PLATAFORMA_OFICIAL",
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
   supportEmail:
-    process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "atendimento@exemplo.com",
+    process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "atendimento@primepocvoce.com.br",
+  pixKey:
+    process.env.NEXT_PUBLIC_PIX_KEY ?? "",
+  pixHolder:
+    process.env.NEXT_PUBLIC_PIX_HOLDER ?? "Prime por Você",
 };
 
 export const BRAND_COLORS = {

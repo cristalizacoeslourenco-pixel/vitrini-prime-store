@@ -4,7 +4,7 @@ export const legalTexts = {
   shippingDisclaimer:
     "Trabalhamos com fornecedores parceiros selecionados. O prazo de entrega pode variar conforme o produto, fornecedor e região do cliente.",
   checkoutSimulated:
-    "Este checkout está em modo simulado para validação da loja. A integração real com gateway de pagamento será feita futuramente com credenciais preenchidas manualmente na plataforma oficial.",
+    "Após confirmar o pedido, você receberá as instruções de pagamento via Pix. O pedido é processado somente após confirmação do pagamento.",
 };
 
 export const privacyPolicy = {
